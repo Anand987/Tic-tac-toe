@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import logo from './logo.svg';
+
 import Icons from "./components/Icons";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -97,7 +97,7 @@ const App = () => {
               <h1 className="text-success text-uppercase text-center">
                 {winMessage}
               </h1>
-              <Button color="success" block onClick={reloadGame}>
+              <Button color="success" className="w-100" onClick={reloadGame}>
                 Reload the game
               </Button>
             </div>
@@ -108,7 +108,7 @@ const App = () => {
           )}
           <div className="grid">
             {itemArray.map((item, index) => (
-              <Card color="primary" onClick={() => changeItem(index)}>
+              <Card key={index} color="primary" onClick={() => changeItem(index)}>
                 <CardBody className="box">
                   <Icons name={item} />
                 </CardBody>
